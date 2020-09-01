@@ -1,0 +1,40 @@
+//
+//  LJMCustomHeader.pch
+//  LJMKit
+//
+//  Created by 刘佳明 on 2020/8/29.
+//  Copyright © 2020 jimmy. All rights reserved.
+//
+
+#ifndef LJMCustomHeader_pch
+#define LJMCustomHeader_pch
+
+// <#  大小  #>
+
+/// 主文字大小 16
+#define kMainTitleFont    16
+///
+#define kSubTitleFont     14
+
+/// 边距距离
+#define kSide_Width       20
+/// 控件间隔
+#define kSpace_Width      10
+
+// <#  颜色  #>
+
+/// APP 背景颜色
+#define kBackgroud_Color  [UIColor colorNamed:@"backgroud_color"]
+/// 主文字颜色
+#define kMain_Title_Color [UIColor colorNamed:@"main_title_color"]
+/// 副文字颜色
+#define kSub_Title_Color  [UIColor colorNamed:@"sub_title_color"]
+
+// <#  尺寸  #>
+#define kScreen_Width     [[UIScreen mainScreen] bounds].size.width
+#define kScreen_Height    [[UIScreen mainScreen] bounds].size.height
+
+// <#  封装的系统方法  #>
+#define kSystemFont(font) [UIFont systemFontOfSize:font]
+
+#endif /* LJMCustomHeader_pch */

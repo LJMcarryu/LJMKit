@@ -1,0 +1,107 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - BGFMDB (2.0.13):
+    - BGFMDB/BG (= 2.0.13)
+    - BGFMDB/FMDB (= 2.0.13)
+  - BGFMDB/BG (2.0.13):
+    - BGFMDB/FMDB
+  - BGFMDB/FMDB (2.0.13)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
+  - CYLTabBarController (1.29.0):
+    - CYLTabBarController/Core (= 1.29.0)
+  - CYLTabBarController/Core (1.29.0)
+  - DZNEmptyDataSet (1.8.1)
+  - FDFullscreenPopGesture (1.1)
+  - FSCalendar (2.8.1)
+  - Masonry (1.1.0)
+  - MJRefresh (3.5.0)
+  - PPNetworkHelper (0.8.1):
+    - AFNetworking (~> 3.2.0)
+    - YYCache (~> 1.0.4)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SVProgressHUD (2.2.5)
+  - TABAnimated (2.4.2)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - BGFMDB
+  - CocoaLumberjack
+  - CYLTabBarController
+  - DZNEmptyDataSet
+  - FDFullscreenPopGesture (= 1.1)
+  - FSCalendar
+  - Masonry
+  - MJRefresh
+  - PPNetworkHelper
+  - SDWebImage
+  - SVProgressHUD
+  - TABAnimated
+  - YYCategories
+  - YYModel
+  - YYText
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BGFMDB
+    - CocoaLumberjack
+    - CYLTabBarController
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - FSCalendar
+    - Masonry
+    - MJRefresh
+    - PPNetworkHelper
+    - SDWebImage
+    - SVProgressHUD
+    - TABAnimated
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  PPNetworkHelper: e893191a73665e9c496c2887fd5ceece9e930bb8
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TABAnimated: 5135c3a5e4d9bcb2015e379c96f202b55124a0c5
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 9afad090b11c0167d44a0ffd973ebdef1b6de49d
+
+COCOAPODS: 1.9.1

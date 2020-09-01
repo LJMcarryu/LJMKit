@@ -1,0 +1,85 @@
+platform :ios, '11.0'
+
+target 'LJMKit' do
+  use_frameworks!
+  inhibit_all_warnings!
+  
+  # --------------- 数据类 ------------------
+  
+  # 网络请求
+#  pod 'AFNetworking', '~> 4.0.1'
+#   # https://github.com/AFNetworking/AFNetworking
+#  pod 'YTKNetwork'
+#   # https://github.com/yuantiku/YTKNetwork/blob/master/Docs/README_cn.md
+  pod 'PPNetworkHelper'
+  # https://github.com/jkpang/PPNetworkHelper
+  
+  # Model
+  pod 'YYModel'
+  
+  # 数据库
+#  pod 'FMDB'
+  # 数据操作
+  pod 'BGFMDB'
+#  pod 'LKDBHelper'
+  
+  # --------------- 方法类 --------------------
+  
+  # 自动布局
+  pod 'Masonry'
+  
+  # 图片
+  pod 'SDWebImage'
+  
+  pod 'YYCategories'
+  pod 'YYText'
+    
+  # --------------- 控件类 --------------------
+  
+  # TabBar 控件
+  pod 'CYLTabBarController'
+  
+  # 刷新控件
+  pod 'MJRefresh'
+  
+  # tableView 空数据处理
+  pod 'DZNEmptyDataSet'
+  # 骨架占位图
+  pod 'TABAnimated'
+  
+  # 自定义 活动提示器 信息提示
+#  pod 'MBProgressHUD'
+  pod 'SVProgressHUD'
+  
+  # 日历
+  pod 'FSCalendar'
+    
+  # --------------- 工具类 --------------------
+  
+  # 自定义 Log
+  pod 'CocoaLumberjack'
+  
+  # 全屏滑动返回
+  pod 'FDFullscreenPopGesture', '1.1'
+  
+  # --------------- 三方服务类 -----------------
+  
+  # 高德地图
+#  pod 'AMap2DMap'
+#  pod 'AMapSearch'
+  
+  # 端对端加密
+#  pod 'SignalCoreKit', git: 'https://github.com/signalapp/SignalCoreKit.git'
+#  pod 'AxolotlKit', git: 'https://github.com/signalapp/SignalProtocolKit.git', branch: 'master'
+#  pod 'Curve25519Kit', git: 'https://github.com/signalapp/Curve25519Kit'
+
+#  target 'LJMKitTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'LJMKitUITests' do
+#    # Pods for testing
+#  end
+
+end

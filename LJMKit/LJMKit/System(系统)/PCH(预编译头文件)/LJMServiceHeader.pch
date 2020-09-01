@@ -1,0 +1,15 @@
+//
+//  LJMServiceHeader.pch
+//  LJMKit
+//
+//  Created by ios on 2020/8/31.
+//  Copyright © 2020 jimmy. All rights reserved.
+//
+
+#ifndef LJMServiceHeader_pch
+#define LJMServiceHeader_pch
+
+#define News_Key    @"4ebf2d14447329979b08a7dabc7e67d3"
+#define Weather_Key @"8d268f3f63768fecb74f764a8cd31f90"
+
+#endif /* LJMServiceHeader_pch */
