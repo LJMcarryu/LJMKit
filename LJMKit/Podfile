@@ -51,6 +51,10 @@ target 'LJMKit' do
 #  pod 'MBProgressHUD'
   pod 'SVProgressHUD'
   
+  # 图片视频查看器
+  pod 'YBImageBrowser'
+  pod 'YBImageBrowser/Video'
+  
   # 日历
   pod 'FSCalendar'
     

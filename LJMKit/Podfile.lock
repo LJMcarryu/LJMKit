@@ -39,10 +39,20 @@ PODS:
   - SDWebImage/Core (5.8.4)
   - SVProgressHUD (2.2.5)
   - TABAnimated (2.4.2)
+  - YBImageBrowser (3.0.9):
+    - YBImageBrowser/Core (= 3.0.9)
+  - YBImageBrowser/Core (3.0.9):
+    - SDWebImage (>= 5.0.0)
+    - YYImage
+  - YBImageBrowser/Video (3.0.9):
+    - YBImageBrowser/Core
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
   - YYModel (1.0.4)
   - YYText (1.0.7)
 
@@ -59,6 +69,8 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - TABAnimated
+  - YBImageBrowser
+  - YBImageBrowser/Video
   - YYCategories
   - YYModel
   - YYText
@@ -78,8 +90,10 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - TABAnimated
+    - YBImageBrowser
     - YYCache
     - YYCategories
+    - YYImage
     - YYModel
     - YYText
 
@@ -97,11 +111,13 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TABAnimated: 5135c3a5e4d9bcb2015e379c96f202b55124a0c5
+  YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9afad090b11c0167d44a0ffd973ebdef1b6de49d
+PODFILE CHECKSUM: d7e839601700d593ef724577edbd62f4b6511dc5
 
 COCOAPODS: 1.9.1

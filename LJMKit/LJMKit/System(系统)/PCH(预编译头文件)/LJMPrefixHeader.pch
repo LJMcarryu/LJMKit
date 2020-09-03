@@ -21,6 +21,8 @@
 #import <MJRefresh/MJRefresh.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <TABAnimated/TABAnimated.h>
+#import <YBImageBrowser/YBImageBrowser.h>
+#import <YBImageBrowser/YBIBVideoData.h>
 
 // 规范化日志输出
 #import "JMSLog.h"

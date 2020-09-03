@@ -26,7 +26,7 @@ static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titleArray = @[@"新闻(骨架图+PPNetworkHelper+YYModel)", @"地图"].mutableCopy;
+    self.titleArray = @[@"新闻(骨架图+PPNetworkHelper+YYModel)", @"地图（隐藏：GitHub上传有包的大小控制）"].mutableCopy;
     [self.view addSubview:self.tableView];
 }
 
@@ -53,8 +53,8 @@ static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
             [self.navigationController pushViewController:[[NSClassFromString(@"LJMNewsViewController")alloc]init] animated:YES];
             break;
         case 1:
-        [self.navigationController pushViewController:[[NSClassFromString(@"LJMMapViewController")alloc]init] animated:YES];
-        break;
+            [self.navigationController pushViewController:[[NSClassFromString(@"LJMMapViewController")alloc]init] animated:YES];
+            break;
 
         default:
             break;
