@@ -40,27 +40,27 @@ static const NSUInteger ddLogLevel = DDLogLevelInfo;
 
 #define JMSLogVerbose(_messageFormat, ...)                                                                              \
     do {                                                                                                                \
-        DDLogVerbose(@"💙 %@%@", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);           \
+        DDLogVerbose(@"💙 Verbose %@\n%@\n.", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);     \
     } while (0)
 
 #define JMSLogDebug(_messageFormat, ...)                                                                                \
     do {                                                                                                                \
-        DDLogDebug(@"💚 %@%@", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);             \
+        DDLogDebug(@"💚 Debug %@\n%@\n.", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);       \
     } while (0)
 
 #define JMSLogInfo(_messageFormat, ...)                                                                                 \
     do {                                                                                                                \
-        DDLogInfo(@"💛 %@%@", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);              \
+        DDLogInfo(@"💛 Info %@\n%@\n.", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);        \
     } while (0)
 
 #define JMSLogWarn(_messageFormat, ...)                                                                                 \
     do {                                                                                                                \
-        DDLogWarn(@"🧡 %@%@", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);              \
+        DDLogWarn(@"🧡 Warn %@\n%@\n.", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);        \
     } while (0)
 
 #define JMSLogError(_messageFormat, ...)                                                                                \
     do {                                                                                                                \
-        DDLogError(@"❤️ %@%@", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);             \
+        DDLogError(@"❤️ Error %@\n%@\n.", JMSLogPrefix(), [NSString stringWithFormat:_messageFormat, ## __VA_ARGS__]);       \
     } while (0)
 
 #define JMSLogFlush()                                                                                                   \

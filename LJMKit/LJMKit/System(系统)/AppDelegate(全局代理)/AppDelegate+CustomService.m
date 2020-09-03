@@ -16,9 +16,12 @@
 - (void)configCustomServiceWithApplication:(UIApplication *)application launchOptions:(NSDictionary *)launchOptions {
     // DDLog 配置
     [self  DDLogToFile];
+    // 骨架图配置
     [self TABAnimated];
     // rootViewController
     [self setRootViewController];
+    // 数据库配置
+    [self setFMDB];
 }
 
 #pragma mark - 将nslog的输出信息写入到.log文件中
@@ -45,6 +48,14 @@
 //    tabBarController.delegate = self;
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+}
+
+#pragma mark - FMDB
+
+- (void)setFMDB {
+    bg_setSqliteName(@"10001");
+    NSString *dbPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    JMSLogDebug(@"数据库路径: %@/", dbPath);
 }
 
 @end

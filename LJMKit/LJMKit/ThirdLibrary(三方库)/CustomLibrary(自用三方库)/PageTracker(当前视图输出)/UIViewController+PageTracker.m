@@ -31,7 +31,7 @@
     if ([className hasPrefix:@"NS"] || [className hasPrefix:@"UI"]) {
         return;
     }
-    DRLog(@"➡️➡️➡️当前视图层级: %@", NSStringFromClass([self class]));
+    DRLog(@"➡️➡️➡️ 当前视图层级: %@", NSStringFromClass([self class]));
 }
 
 + (void)swizzled_swizzleMethod:(Class)cls originalSelector:(SEL)originalSel swizzledSelector:(SEL)swizzledSel {

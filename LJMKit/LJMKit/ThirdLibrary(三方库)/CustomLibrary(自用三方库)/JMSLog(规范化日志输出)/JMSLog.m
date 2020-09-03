@@ -11,23 +11,23 @@
 @implementation JMSLog
 
 + (void)verbose:(NSString *)logString {
-    DDLogVerbose(@"💙 %@", logString);
+    DDLogVerbose(@"💙 Verbose %@", logString);
 }
 
 + (void)debug:(NSString *)logString {
-    DDLogDebug(@"💚 %@", logString);
+    DDLogDebug(@"💚 Debug %@", logString);
 }
 
 + (void)info:(NSString *)logString {
-    DDLogInfo(@"💛 %@", logString);
+    DDLogInfo(@"💛 Info %@", logString);
 }
 
 + (void)warn:(NSString *)logString {
-    DDLogWarn(@"🧡 %@", logString);
+    DDLogWarn(@"🧡 Warn %@", logString);
 }
 
 + (void)error:(NSString *)logString {
-    DDLogError(@"❤️ %@", logString);
+    DDLogError(@"❤️ Error %@", logString);
 }
 
 + (void)flush {

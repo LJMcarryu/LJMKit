@@ -469,8 +469,8 @@
 			children = (
 				D0CA933924FA3312001C0FF7 /* JMCustom */,
 				81F2F17724FCD7D900C791B4 /* JMNews */,
-				81DADA3624FE11E90032F6FA /* JMMapVIew */,
 				81B311C624FDDF8200427BAA /* JMWebView */,
+				81DADA3624FE11E90032F6FA /* JMMapVIew */,
 			);
 			path = "Custom(自定义)";
 			sourceTree = "<group>";

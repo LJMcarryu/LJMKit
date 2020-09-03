@@ -37,4 +37,10 @@
 // <#  封装的系统方法  #>
 #define kSystemFont(font) [UIFont systemFontOfSize:font]
 
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"🍜 NSLog [%s:%d %s]:\n%s\n.\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[[NSString stringWithUTF8String:__PRETTY_FUNCTION__] lastPathComponent] UTF8String], [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
 #endif /* LJMCustomHeader_pch */

@@ -42,6 +42,9 @@ static NSString *newsCellID = @"newsCellID";
                 [self.dataArray addObject:model];
             }
         }
+        [[BGDB shareManager] bg_saveOrUpateArray:self.dataArray ignoredKeys:nil complete:^(BOOL isSuccess) {
+            NSLog(@"success");
+        }];
         //TODO: 为了展示骨架图
         [NSThread sleepForTimeInterval:3.0];
         [self.tableView tab_endAnimation];

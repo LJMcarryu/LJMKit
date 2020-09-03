@@ -10,4 +10,9 @@
 
 @implementation LJMNewsModel
 
+// 唯一约束
++ (NSArray *)bg_uniqueKeys {
+    return @[@"uniquekey"];
+}
+
 @end
