@@ -54,6 +54,7 @@ target 'LJMKit' do
   # 图片视频查看器
   pod 'YBImageBrowser'
   pod 'YBImageBrowser/Video'
+  # https://github.com/indulgeIn/YBImageBrowser
   
   # 日历
   pod 'FSCalendar'
