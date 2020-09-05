@@ -10,9 +10,9 @@
 #import <objc/runtime.h>
 
 #ifdef DEBUG
-#define DRLog(FORMAT, ...) fprintf(stderr, "%s\n", [[NSString stringWithFormat:FORMAT, ## __VA_ARGS__] UTF8String]);
+#define LJMSLog(FORMAT, ...) fprintf(stderr, "%s\n", [[NSString stringWithFormat:FORMAT, ## __VA_ARGS__] UTF8String]);
 #else
-#define DRLog(...)
+#define LJMSLog(...)
 #endif
 
 @implementation UIViewController (PageTracker)
@@ -31,7 +31,7 @@
     if ([className hasPrefix:@"NS"] || [className hasPrefix:@"UI"]) {
         return;
     }
-    DRLog(@"➡️➡️➡️ 当前视图层级: %@", NSStringFromClass([self class]));
+    LJMSLog(@"➡️ 当前视图层级: %@", NSStringFromClass([self class]));
 }
 
 + (void)swizzled_swizzleMethod:(Class)cls originalSelector:(SEL)originalSel swizzledSelector:(SEL)swizzledSel {

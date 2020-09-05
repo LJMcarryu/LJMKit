@@ -26,6 +26,23 @@
     [SVProgressHUD dismissWithDelay:30];
 }
 
+/// 活动提示器 默认30秒 允许用户交互(可选展示层)
++ (void)showHUDAtView:(UIView *)view {
+    [self setSVProgressHUD];
+    [SVProgressHUD setContainerView:view];
+    [SVProgressHUD show];
+    [SVProgressHUD dismissWithDelay:30];
+}
+
+/// 活动提示器 默认30秒 不允许用户交互(可选展示层)
++ (void)showUnableHUDAtView:(UIView *)view {
+    [self setSVProgressHUD];
+    [SVProgressHUD setContainerView:view];
+    [SVProgressHUD show];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD dismissWithDelay:30];
+}
+
 /// 加载中...  默认30秒 允许用户交互
 + (void)showHUDWithDefaultStatus {
     [self setSVProgressHUD];
@@ -53,23 +70,6 @@
     [self setSVProgressHUD];
     [SVProgressHUD showImage:[UIImage imageNamed:@"notNull"] status:message];
     [SVProgressHUD dismissWithDelay:time];
-}
-
-/// 活动提示器 默认30秒 允许用户交互(可选展示层)
-+ (void)showHUDAtView:(UIView *)view {
-    [self setSVProgressHUD];
-    [SVProgressHUD setContainerView:view];
-    [SVProgressHUD show];
-    [SVProgressHUD dismissWithDelay:30];
-}
-
-/// 活动提示器 默认30秒 不允许用户交互(可选展示层)
-+ (void)showUnableHUDAtView:(UIView *)view {
-    [self setSVProgressHUD];
-    [SVProgressHUD setContainerView:view];
-    [SVProgressHUD show];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-    [SVProgressHUD dismissWithDelay:30];
 }
 
 /// 消失

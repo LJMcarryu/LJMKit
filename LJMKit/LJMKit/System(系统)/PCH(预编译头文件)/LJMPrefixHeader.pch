@@ -11,7 +11,7 @@
 
 #import <PPNetworkHelper/PPNetworkHelper.h>
 #import <YYModel/YYModel.h>
-#import <BGFMDB/BGFMDB.h>
+//#import <BGFMDB/BGFMDB.h> // 这里全局引入会报黄 具体原因还没去看 现在是手动导入到各个 model 里
 #import <BGFMDB/BGDB.h>
 #import <Masonry/Masonry.h>
 #import <SDWebImage/SDWebImage.h>

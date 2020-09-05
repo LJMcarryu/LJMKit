@@ -38,18 +38,18 @@ static NSString *newsCellID = @"newsCellID";
         NSArray *resultArray = [NSArray arrayWithArray:dict[@"result"][@"data"]];
         for (NSDictionary *dic in resultArray) {
             LJMNewsModel *model = [LJMNewsModel yy_modelWithDictionary:dic];
-            if (model.uniquekey.length > 0) {
-                [self.dataArray addObject:model];
-            }
+            [self.dataArray addObject:model];
         }
+        // 批量保存或更新
         [[BGDB shareManager] bg_saveOrUpateArray:self.dataArray ignoredKeys:nil complete:^(BOOL isSuccess) {
             NSLog(@"success");
         }];
-        //TODO: 为了展示骨架图
-        [NSThread sleepForTimeInterval:3.0];
         [self.tableView tab_endAnimation];
     } failure:^(NSError *error) {
         JMSLogError(@"%@", error.description);
+        [self.dataArray removeAllObjects];
+        self.dataArray = [NSMutableArray arrayWithArray:[LJMNewsModel bg_findAll:LJMNewsModel.className]];
+        [self.tableView tab_endAnimation];
     }];
 }
 

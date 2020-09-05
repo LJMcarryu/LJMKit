@@ -17,9 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 活动提示器 默认30秒 不允许用户交互
 + (void)showUnableHUD;
 
+/// 活动提示器 默认30秒 允许用户交互(可选展示层)
++ (void)showHUDAtView:(UIView *)view;
+/// 活动提示器 默认30秒 不允许用户交互(可选展示层)
++ (void)showUnableHUDAtView:(UIView *)view;
+
 /// 加载中...  默认30秒 允许用户交互
 + (void)showHUDWithDefaultStatus;
-
 /// 加载中...  默认30秒 不允许用户交互
 + (void)showUnableHUDWithDefaultStatus;
 
@@ -28,11 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 文字提醒 自定义显示时间
 + (void)showMessageWithStatus:(NSString *)message delay:(NSTimeInterval)time;
 
-/// 活动提示器 默认30秒 允许用户交互(可选展示层)
-+ (void)showHUDAtView:(UIView *)view;
 
-/// 活动提示器 默认30秒 不允许用户交互(可选展示层)
-+ (void)showUnableHUDAtView:(UIView *)view;
 
 /// 消失
 + (void)dismiss;
