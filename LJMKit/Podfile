@@ -55,6 +55,8 @@ target 'LJMKit' do
   pod 'YBImageBrowser'
   pod 'YBImageBrowser/Video'
   # https://github.com/indulgeIn/YBImageBrowser
+  pod 'TZImagePickerController'
+  # https://github.com/banchichen/TZImagePickerController
   
   # 日历
   pod 'FSCalendar'
