@@ -32,6 +32,7 @@
 		81F8408224F3BF4100401B86 /* JMSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408024F3BF4100401B86 /* JMSLog.m */; };
 		81F8408524F3C2B100401B86 /* AppDelegate+CustomService.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408424F3C2B100401B86 /* AppDelegate+CustomService.m */; };
 		BF4C52C0255E7FB100C8A181 /* LJMXCodeChineseLog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */; };
+		BFD0ED8B2564F54A00B6EC40 /* JMServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ED8A2564F54A00B6EC40 /* JMServer.m */; };
 		D0CA933724FA32D4001C0FF7 /* LJMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA933624FA32D4001C0FF7 /* LJMTabBarViewController.m */; };
 		D0CA934224FA3362001C0FF7 /* LJMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA934124FA3362001C0FF7 /* LJMMessageViewController.m */; };
 		D0CA934524FA3371001C0FF7 /* LJMCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CA934424FA3371001C0FF7 /* LJMCustomViewController.m */; };
@@ -112,6 +113,8 @@
 		92999954D1B0F069EF17F52E /* Pods_LJMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C52BE255E7FB100C8A181 /* LJMXCodeChineseLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMXCodeChineseLog.h; sourceTree = "<group>"; };
 		BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMXCodeChineseLog.m; sourceTree = "<group>"; };
+		BFD0ED892564F54A00B6EC40 /* JMServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMServer.h; sourceTree = "<group>"; };
+		BFD0ED8A2564F54A00B6EC40 /* JMServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMServer.m; sourceTree = "<group>"; };
 		D0CA933524FA32D3001C0FF7 /* LJMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMTabBarViewController.h; sourceTree = "<group>"; };
 		D0CA933624FA32D4001C0FF7 /* LJMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMTabBarViewController.m; sourceTree = "<group>"; };
 		D0CA934024FA3362001C0FF7 /* LJMMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMMessageViewController.h; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				81F2F15424FCCE8900C791B4 /* JMFactory(工厂类) */,
+				BFD0ED882564F52900B6EC40 /* JMServer(网络类) */,
 			);
 			path = "Util(方法)";
 			sourceTree = "<group>";
@@ -441,6 +445,15 @@
 				BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */,
 			);
 			path = "XCodeChineseLog(控制台中文输入)";
+			sourceTree = "<group>";
+		};
+		BFD0ED882564F52900B6EC40 /* JMServer(网络类) */ = {
+			isa = PBXGroup;
+			children = (
+				BFD0ED892564F54A00B6EC40 /* JMServer.h */,
+				BFD0ED8A2564F54A00B6EC40 /* JMServer.m */,
+			);
+			path = "JMServer(网络类)";
 			sourceTree = "<group>";
 		};
 		D0CA932F24FA320B001C0FF7 /* MVC(框架) */ = {
@@ -762,6 +775,7 @@
 				81F2F17D24FCD7F300C791B4 /* LJMNewsViewController.m in Sources */,
 				D0CA934224FA3362001C0FF7 /* LJMMessageViewController.m in Sources */,
 				D0CA933724FA32D4001C0FF7 /* LJMTabBarViewController.m in Sources */,
+				BFD0ED8B2564F54A00B6EC40 /* JMServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

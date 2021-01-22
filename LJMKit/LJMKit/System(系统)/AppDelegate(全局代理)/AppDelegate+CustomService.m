@@ -22,6 +22,8 @@
     [self setRootViewController];
     // 数据库配置
     [self setFMDB];
+    // 网络配置
+    [self setServer];
 }
 
 #pragma mark - 将nslog的输出信息写入到.log文件中
@@ -56,6 +58,14 @@
     bg_setSqliteName(@"10001");
     NSString *dbPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     JMSLogDebug(@"数据库路径: %@/", dbPath);
+}
+
+#pragma mark - 网络设置
+
+- (void)setServer {
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = @"http://v.juhe.cn";
+    config.cdnUrl = @"";
 }
 
 @end

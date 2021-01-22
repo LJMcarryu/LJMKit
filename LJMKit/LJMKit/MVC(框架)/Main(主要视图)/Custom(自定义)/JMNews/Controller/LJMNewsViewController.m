@@ -33,8 +33,12 @@ static NSString *newsCellID = @"newsCellID";
     self.dataArray = @[].mutableCopy;
     [self.view addSubview:self.tableView];
     [self.tableView tab_startAnimation];
-    [PPNetworkHelper GET:[NSString stringWithFormat:@"http://v.juhe.cn/toutiao/index"] parameters:@{ @"type": @"top", @"key": News_Key } success:^(id responseObject) {
-        NSDictionary *dict = responseObject;
+
+    JMNewsApi *api = [[JMNewsApi alloc] initWithType:@"top" key:News_Key];
+    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest *_Nonnull request) {
+        NSLog(@"httpHeaderField: %@", request.requestHeaderFieldValueDictionary);
+        NSLog(@"request : %@", request.responseObject);
+        NSDictionary *dict = request.responseObject;
         NSArray *resultArray = [NSArray arrayWithArray:dict[@"result"][@"data"]];
         for (NSDictionary *dic in resultArray) {
             LJMNewsModel *model = [LJMNewsModel yy_modelWithDictionary:dic];
@@ -45,8 +49,8 @@ static NSString *newsCellID = @"newsCellID";
             NSLog(@"success");
         }];
         [self.tableView tab_endAnimation];
-    } failure:^(NSError *error) {
-        JMSLogError(@"%@", error.description);
+    } failure:^(__kindof YTKBaseRequest *_Nonnull request) {
+        JMSLogError(@"%@", request.error.description);
         [self.dataArray removeAllObjects];
         self.dataArray = [NSMutableArray arrayWithArray:[LJMNewsModel bg_findAll:LJMNewsModel.className]];
         [self.tableView tab_endAnimation];

@@ -9,9 +9,9 @@ target 'LJMKit' do
   # 网络请求
 #  pod 'AFNetworking', '~> 4.0.1'
 #   # https://github.com/AFNetworking/AFNetworking
-#  pod 'YTKNetwork'
+  pod 'YTKNetwork'
 #   # https://github.com/yuantiku/YTKNetwork/blob/master/Docs/README_cn.md
-  pod 'PPNetworkHelper'
+#  pod 'PPNetworkHelper'
   # https://github.com/jkpang/PPNetworkHelper
   
   # Model
