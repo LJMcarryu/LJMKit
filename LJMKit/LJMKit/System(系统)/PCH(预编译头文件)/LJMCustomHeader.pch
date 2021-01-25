@@ -12,33 +12,36 @@
 // <#  大小  #>
 
 /// 主文字大小 16
-#define kMainTitleFont    16
+#define kMainTitleFont        16
 ///
-#define kSubTitleFont     14
+#define kSubTitleFont         14
 
 /// 边距距离
-#define kSide_Width       20
+#define kSide_Width           20
 /// 控件间隔
-#define kSpace_Width      10
+#define kSpace_Width          10
 
 // <#  颜色  #>
 
 /// APP 背景颜色
-#define kBackgroud_Color  [UIColor colorNamed:@"backgroud_color"]
+#define kBackgroud_Color_Main [UIColor colorNamed:@"backgroud_color_main"]
+/// Cell 背景颜色
+#define kBackgroud_Color_Cell [UIColor colorNamed:@"backgroud_color_cell"]
+
 /// 主文字颜色
-#define kMain_Title_Color [UIColor colorNamed:@"main_title_color"]
+#define kMain_Title_Color     [UIColor colorNamed:@"main_title_color"]
 /// 副文字颜色
-#define kSub_Title_Color  [UIColor colorNamed:@"sub_title_color"]
+#define kSub_Title_Color      [UIColor colorNamed:@"sub_title_color"]
 
 // <#  尺寸  #>
-#define kScreen_Width     [[UIScreen mainScreen] bounds].size.width
-#define kScreen_Height    [[UIScreen mainScreen] bounds].size.height
+#define kScreen_Width         [[UIScreen mainScreen] bounds].size.width
+#define kScreen_Height        [[UIScreen mainScreen] bounds].size.height
 
 // <#  封装的系统方法  #>
-#define kSystemFont(font) [UIFont systemFontOfSize:font]
+#define kSystemFont(font)  [UIFont systemFontOfSize:font]
 
 #ifdef DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"🍜 NSLog [%s:%d %s]:\n%s\n.\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[[NSString stringWithUTF8String:__PRETTY_FUNCTION__] lastPathComponent] UTF8String], [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) fprintf(stderr, "🍜 NSLog [%s:%d %s]:\n%s\n.\n", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[[NSString stringWithUTF8String:__PRETTY_FUNCTION__] lastPathComponent] UTF8String], [[NSString stringWithFormat:FORMAT, ## __VA_ARGS__] UTF8String]);
 #else
 #define NSLog(...)
 #endif

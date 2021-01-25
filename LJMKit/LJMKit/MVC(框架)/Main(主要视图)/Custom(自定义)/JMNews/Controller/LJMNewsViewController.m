@@ -29,7 +29,7 @@ static NSString *newsCellID = @"newsCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"新闻(骨架图+PPNetworkHelper+YYModel)";
-    self.view.backgroundColor = kBackgroud_Color;
+    self.view.backgroundColor = kBackgroud_Color_Main;
     self.dataArray = @[].mutableCopy;
     [self.view addSubview:self.tableView];
     [self.tableView tab_startAnimation];
@@ -87,7 +87,7 @@ static NSString *newsCellID = @"newsCellID";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
-        _tableView.backgroundColor = kBackgroud_Color;
+        _tableView.backgroundColor = kBackgroud_Color_Main;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:LJMNewsTableViewCell.class forCellReuseIdentifier:newsCellID];

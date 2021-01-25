@@ -42,6 +42,9 @@ static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
+    cell.backgroundColor = kBackgroud_Color_Cell;
+    cell.contentView.backgroundColor = kBackgroud_Color_Cell;
+    
     cell.textLabel.text = self.titleArray[indexPath.row];
     return cell;
 }
@@ -65,9 +68,10 @@ static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
-        _tableView.backgroundColor = kBackgroud_Color;
+        _tableView.backgroundColor = kBackgroud_Color_Main;
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.tableFooterView = UIView.new;
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:cellReuseIdentifier];
     }
     return _tableView;

@@ -83,7 +83,7 @@
     // 这一句是为了适配 有些是需要显示在 ContainerView 上
     [SVProgressHUD setContainerView:nil];
     [SVProgressHUD setBackgroundColor:[self colorInDifferentMode]];
-    [SVProgressHUD setForegroundColor:kBackgroud_Color];
+    [SVProgressHUD setForegroundColor:kBackgroud_Color_Main];
     [SVProgressHUD setCornerRadius:22];
 }
 

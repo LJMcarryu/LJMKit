@@ -1,4 +1,5 @@
 PODS:
+  - AAChartKit (6.0.0)
   - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -28,6 +29,7 @@ PODS:
   - SDWebImage/Core (5.8.4)
   - SVProgressHUD (2.2.5)
   - TABAnimated (2.4.2)
+  - TZImagePickerController (3.5.8)
   - YBImageBrowser (3.0.9):
     - YBImageBrowser/Core (= 3.0.9)
   - YBImageBrowser/Core (3.0.9):
@@ -47,6 +49,7 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - AAChartKit (from `https://github.com/AAChartModel/AAChartKit.git`)
   - BGFMDB
   - CocoaLumberjack
   - CYLTabBarController
@@ -58,6 +61,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - TABAnimated
+  - TZImagePickerController
   - YBImageBrowser
   - YBImageBrowser/Video
   - YTKNetwork
@@ -79,6 +83,7 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - TABAnimated
+    - TZImagePickerController
     - YBImageBrowser
     - YTKNetwork
     - YYCategories
@@ -86,7 +91,17 @@ SPEC REPOS:
     - YYModel
     - YYText
 
+EXTERNAL SOURCES:
+  AAChartKit:
+    :git: https://github.com/AAChartModel/AAChartKit.git
+
+CHECKOUT OPTIONS:
+  AAChartKit:
+    :commit: 6e3db63c3bfb46a69344f4084b770d81051f47d3
+    :git: https://github.com/AAChartModel/AAChartKit.git
+
 SPEC CHECKSUMS:
+  AAChartKit: dffacac3b641f2d2dc2fbf5f227350d22faee784
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
@@ -99,6 +114,7 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TABAnimated: 5135c3a5e4d9bcb2015e379c96f202b55124a0c5
+  TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YTKNetwork: a096f80c18c7e7cc0e623a0fbea0a1bfd3f5bcf2
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -106,6 +122,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 95c287594f116fccf8889861a26857098cecfe64
+PODFILE CHECKSUM: 65b248a0f47534c036d0d9f9055d456e9c92c076
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

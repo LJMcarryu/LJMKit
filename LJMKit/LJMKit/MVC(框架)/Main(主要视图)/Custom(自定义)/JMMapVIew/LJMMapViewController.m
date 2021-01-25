@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"地图";
-    self.view.backgroundColor = kBackgroud_Color;
+    self.view.backgroundColor = kBackgroud_Color_Main;
 
 //    // 开启定位
 //    self.manager = CLLocationManager.alloc.init;

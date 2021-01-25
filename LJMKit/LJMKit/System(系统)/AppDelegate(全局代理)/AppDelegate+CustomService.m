@@ -45,7 +45,7 @@
 
 - (void)setRootViewController {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = kBackgroud_Color;
+    self.window.backgroundColor = kBackgroud_Color_Main;
     LJMTabBarViewController *tabBarController = LJMTabBarViewController.alloc.init;
 //    tabBarController.delegate = self;
     self.window.rootViewController = tabBarController;
