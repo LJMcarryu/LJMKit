@@ -36,6 +36,9 @@ target 'LJMKit' do
     
   # --------------- 控件类 --------------------
   
+  # 闪烁效果
+  pod 'Shimmer'
+  
   # TabBar 控件
   pod 'CYLTabBarController'
   

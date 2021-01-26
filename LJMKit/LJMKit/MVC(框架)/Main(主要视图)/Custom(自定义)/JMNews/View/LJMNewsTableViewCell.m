@@ -32,11 +32,16 @@
     self.dateLabel = [JMFactory createLabelWithText:@"xxx" textColor:kSub_Title_Color font:12.0f textAlignment:0 numberOfLines:1];
     [self.contentView addSubview:self.dateLabel];
 
+    self.picImgView.contentMode = UIViewContentModeScaleAspectFill;
+    self.picImgView.layer.masksToBounds = YES;
+}
+
+- (void)layoutSubviews {
     [self.picImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.top.bottom.inset(kSpace_Width);
         make.left.inset(kSide_Width);
-        make.width.mas_equalTo(self.picImgView.mas_height);
+        make.width.mas_equalTo(self.picImgView.mas_height).multipliedBy(1.78);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.picImgView.mas_top);

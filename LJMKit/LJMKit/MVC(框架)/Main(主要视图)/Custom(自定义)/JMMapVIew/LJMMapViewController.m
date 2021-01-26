@@ -8,6 +8,7 @@
 
 #import "LJMMapViewController.h"
 //#import <MAMapKit/MAMapKit.h>
+#import <FBShimmeringView.h>
 
 @interface LJMMapViewController ()
 // <MAMapViewDelegate>
@@ -25,6 +26,17 @@
     [super viewDidLoad];
     self.navigationItem.title = @"地图";
     self.view.backgroundColor = kBackgroud_Color_Main;
+    
+    FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:shimmeringView];
+
+    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:shimmeringView.bounds];
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    loadingLabel.text = NSLocalizedString(@"Shimmer", nil);
+    shimmeringView.contentView = loadingLabel;
+
+    // Start shimmering.
+    shimmeringView.shimmering = YES;
 
 //    // 开启定位
 //    self.manager = CLLocationManager.alloc.init;
