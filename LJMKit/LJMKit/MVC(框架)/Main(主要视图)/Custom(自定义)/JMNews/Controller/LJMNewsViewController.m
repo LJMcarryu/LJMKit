@@ -12,6 +12,8 @@
 
 #import "LJMWebViewController.h"
 
+#import "LJMAPMTool.h"
+
 static NSString *newsCellID = @"newsCellID";
 
 @interface LJMNewsViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -34,23 +36,28 @@ static NSString *newsCellID = @"newsCellID";
     [self.view addSubview:self.tableView];
     [self.tableView tab_startAnimation];
 
+    uint64_t apiStart = [LJMAPMTool apm_foundationStart];
     JMNewsApi *api = [[JMNewsApi alloc] initWithType:@"top" key:News_Key];
     [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest *_Nonnull request) {
         NSLog(@"httpHeaderField: %@", request.requestHeaderFieldValueDictionary);
         NSLog(@"request : %@", request.responseObject);
+        [LJMAPMTool apm_foundationStopWithStart:apiStart];
         NSDictionary *dict = request.responseObject;
         NSArray *resultArray = [NSArray arrayWithArray:dict[@"result"][@"data"]];
         for (NSDictionary *dic in resultArray) {
             LJMNewsModel *model = [LJMNewsModel yy_modelWithDictionary:dic];
             [self.dataArray addObject:model];
         }
+        uint64_t dbStart = [LJMAPMTool apm_foundationStart];
         // 批量保存或更新
         [[BGDB shareManager] bg_saveOrUpateArray:self.dataArray ignoredKeys:nil complete:^(BOOL isSuccess) {
             NSLog(@"success");
+            [LJMAPMTool apm_foundationStopWithStart:dbStart];
         }];
         [self.tableView tab_endAnimation];
     } failure:^(__kindof YTKBaseRequest *_Nonnull request) {
         JMSLogError(@"%@", request.error.description);
+        [LJMAPMTool apm_foundationStopWithStart:apiStart];
         [self.dataArray removeAllObjects];
         self.dataArray = [NSMutableArray arrayWithArray:[LJMNewsModel bg_findAll:LJMNewsModel.className]];
         [self.tableView tab_endAnimation];
