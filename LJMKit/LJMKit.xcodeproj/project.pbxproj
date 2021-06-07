@@ -31,6 +31,7 @@
 		81F2F18024FCD80800C791B4 /* LJMNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2F17F24FCD80800C791B4 /* LJMNewsModel.m */; };
 		81F8408224F3BF4100401B86 /* JMSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408024F3BF4100401B86 /* JMSLog.m */; };
 		81F8408524F3C2B100401B86 /* AppDelegate+CustomService.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408424F3C2B100401B86 /* AppDelegate+CustomService.m */; };
+		840B0ED2266DBE4D001D0EB4 /* LJMAPMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */; };
 		BF4C52C0255E7FB100C8A181 /* LJMXCodeChineseLog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */; };
 		BF979E5225BA625200D02A2B /* LJMNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF979E5025BA625200D02A2B /* LJMNewsTableViewCell.m */; };
 		BFD0ED8B2564F54A00B6EC40 /* JMServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ED8A2564F54A00B6EC40 /* JMServer.m */; };
@@ -110,6 +111,8 @@
 		81F8408124F3BF4100401B86 /* JMSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSLog.h; sourceTree = "<group>"; };
 		81F8408324F3C2B100401B86 /* AppDelegate+CustomService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+CustomService.h"; sourceTree = "<group>"; };
 		81F8408424F3C2B100401B86 /* AppDelegate+CustomService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+CustomService.m"; sourceTree = "<group>"; };
+		840B0ED0266DBE4D001D0EB4 /* LJMAPMTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMAPMTool.h; sourceTree = "<group>"; };
+		840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMAPMTool.m; sourceTree = "<group>"; };
 		92999954D1B0F069EF17F52E /* Pods_LJMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C52BE255E7FB100C8A181 /* LJMXCodeChineseLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMXCodeChineseLog.h; sourceTree = "<group>"; };
 		BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMXCodeChineseLog.m; sourceTree = "<group>"; };
@@ -412,6 +415,7 @@
 		81F8407B24F39A5500401B86 /* CustomLibrary(自用三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				840B0ECF266DBE14001D0EB4 /* JMAPMTool（性能耗时统计工具） */,
 				BF4C52BD255E7F8500C8A181 /* XCodeChineseLog(控制台中文输入) */,
 				81F8407F24F3BF4100401B86 /* JMSLog(规范化日志输出) */,
 				81B311CA24FDEAA700427BAA /* PageTracker(当前视图输出) */,
@@ -427,6 +431,15 @@
 				81F8408024F3BF4100401B86 /* JMSLog.m */,
 			);
 			path = "JMSLog(规范化日志输出)";
+			sourceTree = "<group>";
+		};
+		840B0ECF266DBE14001D0EB4 /* JMAPMTool（性能耗时统计工具） */ = {
+			isa = PBXGroup;
+			children = (
+				840B0ED0266DBE4D001D0EB4 /* LJMAPMTool.h */,
+				840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */,
+			);
+			path = "JMAPMTool（性能耗时统计工具）";
 			sourceTree = "<group>";
 		};
 		BF4C52BD255E7F8500C8A181 /* XCodeChineseLog(控制台中文输入) */ = {
@@ -723,6 +736,7 @@
 				81D6BCA624F385F100DEF94F /* AppDelegate.m in Sources */,
 				D0CA934524FA3371001C0FF7 /* LJMCustomViewController.m in Sources */,
 				81F2F17224FCCF0C00C791B4 /* LJMSkidSideCellProxy.m in Sources */,
+				840B0ED2266DBE4D001D0EB4 /* LJMAPMTool.m in Sources */,
 				81F2F17624FCCF0C00C791B4 /* XYMemberSelectedCell.m in Sources */,
 				81DADA3924FE120B0032F6FA /* LJMMapViewController.m in Sources */,
 				81F2F17124FCCF0C00C791B4 /* XYTextField.m in Sources */,
