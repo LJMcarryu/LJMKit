@@ -52,7 +52,9 @@ static NSString *newsCellID = @"newsCellID";
         // 批量保存或更新
         [[BGDB shareManager] bg_saveOrUpateArray:self.dataArray ignoredKeys:nil complete:^(BOOL isSuccess) {
             NSLog(@"success");
-            [LJMAPMTool apm_foundationStopWithStart:dbStart];
+//            [LJMAPMTool apm_foundationStopWithStart:dbStart];
+            [LJMAPMTool apm_foundationSaveValue:[NSString stringWithFormat:@"%llu",[LJMAPMTool apm_foundationStopWithStart:dbStart]]
+                                            key:LJMAPMCollectStyleKeyHTTPDNS];
         }];
         [self.tableView tab_endAnimation];
     } failure:^(__kindof YTKBaseRequest *_Nonnull request) {

@@ -32,6 +32,11 @@
 		81F8408224F3BF4100401B86 /* JMSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408024F3BF4100401B86 /* JMSLog.m */; };
 		81F8408524F3C2B100401B86 /* AppDelegate+CustomService.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F8408424F3C2B100401B86 /* AppDelegate+CustomService.m */; };
 		840B0ED2266DBE4D001D0EB4 /* LJMAPMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */; };
+		842C9FD8266DF75A006C487D /* JKSqliteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9FD3266DF75A006C487D /* JKSqliteModel.m */; };
+		842C9FD9266DF75A006C487D /* JKSqliteModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9FD4266DF75A006C487D /* JKSqliteModelTool.m */; };
+		842C9FDA266DF75A006C487D /* JKSqliteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9FD5266DF75A006C487D /* JKSqliteDatabase.m */; };
+		842C9FDB266DF75A006C487D /* JKSqliteTableTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C9FD7266DF75A006C487D /* JKSqliteTableTool.m */; };
+		846A737C266F1089000F1090 /* LJMAPMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846A737B266F1089000F1090 /* LJMAPMModel.m */; };
 		BF4C52C0255E7FB100C8A181 /* LJMXCodeChineseLog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */; };
 		BF979E5225BA625200D02A2B /* LJMNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF979E5025BA625200D02A2B /* LJMNewsTableViewCell.m */; };
 		BFD0ED8B2564F54A00B6EC40 /* JMServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ED8A2564F54A00B6EC40 /* JMServer.m */; };
@@ -113,6 +118,18 @@
 		81F8408424F3C2B100401B86 /* AppDelegate+CustomService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+CustomService.m"; sourceTree = "<group>"; };
 		840B0ED0266DBE4D001D0EB4 /* LJMAPMTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMAPMTool.h; sourceTree = "<group>"; };
 		840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMAPMTool.m; sourceTree = "<group>"; };
+		842C9FCE266DF75A006C487D /* JKSqliteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteModel.h; sourceTree = "<group>"; };
+		842C9FCF266DF75A006C487D /* JKSqliteModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteModelTool.h; sourceTree = "<group>"; };
+		842C9FD0266DF75A006C487D /* JKSqliteDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteDatabase.h; sourceTree = "<group>"; };
+		842C9FD1266DF75A006C487D /* JKSqliteKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteKit.h; sourceTree = "<group>"; };
+		842C9FD2266DF75A006C487D /* JKSqliteTableTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteTableTool.h; sourceTree = "<group>"; };
+		842C9FD3266DF75A006C487D /* JKSqliteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSqliteModel.m; sourceTree = "<group>"; };
+		842C9FD4266DF75A006C487D /* JKSqliteModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSqliteModelTool.m; sourceTree = "<group>"; };
+		842C9FD5266DF75A006C487D /* JKSqliteDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSqliteDatabase.m; sourceTree = "<group>"; };
+		842C9FD6266DF75A006C487D /* JKSqliteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSqliteProtocol.h; sourceTree = "<group>"; };
+		842C9FD7266DF75A006C487D /* JKSqliteTableTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSqliteTableTool.m; sourceTree = "<group>"; };
+		846A737A266F1089000F1090 /* LJMAPMModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMAPMModel.h; sourceTree = "<group>"; };
+		846A737B266F1089000F1090 /* LJMAPMModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMAPMModel.m; sourceTree = "<group>"; };
 		92999954D1B0F069EF17F52E /* Pods_LJMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4C52BE255E7FB100C8A181 /* LJMXCodeChineseLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMXCodeChineseLog.h; sourceTree = "<group>"; };
 		BF4C52BF255E7FB100C8A181 /* LJMXCodeChineseLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMXCodeChineseLog.m; sourceTree = "<group>"; };
@@ -438,8 +455,28 @@
 			children = (
 				840B0ED0266DBE4D001D0EB4 /* LJMAPMTool.h */,
 				840B0ED1266DBE4D001D0EB4 /* LJMAPMTool.m */,
+				846A737A266F1089000F1090 /* LJMAPMModel.h */,
+				846A737B266F1089000F1090 /* LJMAPMModel.m */,
+				842C9FCD266DF75A006C487D /* JKSqliteKit */,
 			);
 			path = "JMAPMTool（性能耗时统计工具）";
+			sourceTree = "<group>";
+		};
+		842C9FCD266DF75A006C487D /* JKSqliteKit */ = {
+			isa = PBXGroup;
+			children = (
+				842C9FD1266DF75A006C487D /* JKSqliteKit.h */,
+				842C9FD6266DF75A006C487D /* JKSqliteProtocol.h */,
+				842C9FD0266DF75A006C487D /* JKSqliteDatabase.h */,
+				842C9FD5266DF75A006C487D /* JKSqliteDatabase.m */,
+				842C9FCE266DF75A006C487D /* JKSqliteModel.h */,
+				842C9FD3266DF75A006C487D /* JKSqliteModel.m */,
+				842C9FCF266DF75A006C487D /* JKSqliteModelTool.h */,
+				842C9FD4266DF75A006C487D /* JKSqliteModelTool.m */,
+				842C9FD2266DF75A006C487D /* JKSqliteTableTool.h */,
+				842C9FD7266DF75A006C487D /* JKSqliteTableTool.m */,
+			);
+			path = JKSqliteKit;
 			sourceTree = "<group>";
 		};
 		BF4C52BD255E7F8500C8A181 /* XCodeChineseLog(控制台中文输入) */ = {
@@ -747,6 +784,9 @@
 				81F2F16F24FCCF0C00C791B4 /* XYVerifyCodeView.m in Sources */,
 				81F2F17024FCCF0C00C791B4 /* XYMessageHUD.m in Sources */,
 				81F8408224F3BF4100401B86 /* JMSLog.m in Sources */,
+				842C9FDB266DF75A006C487D /* JKSqliteTableTool.m in Sources */,
+				842C9FD8266DF75A006C487D /* JKSqliteModel.m in Sources */,
+				842C9FD9266DF75A006C487D /* JKSqliteModelTool.m in Sources */,
 				BF4C52C0255E7FB100C8A181 /* LJMXCodeChineseLog.m in Sources */,
 				81F2F17324FCCF0C00C791B4 /* LJMSkidSideContainerView.m in Sources */,
 				81D6BCB724F385F200DEF94F /* main.m in Sources */,
@@ -755,7 +795,9 @@
 				81DADA3524FDF9790032F6FA /* AppDelegate+ThirdService.m in Sources */,
 				81F2F17D24FCD7F300C791B4 /* LJMNewsViewController.m in Sources */,
 				D0CA934224FA3362001C0FF7 /* LJMMessageViewController.m in Sources */,
+				846A737C266F1089000F1090 /* LJMAPMModel.m in Sources */,
 				BF979E5225BA625200D02A2B /* LJMNewsTableViewCell.m in Sources */,
+				842C9FDA266DF75A006C487D /* JKSqliteDatabase.m in Sources */,
 				D0CA933724FA32D4001C0FF7 /* LJMTabBarViewController.m in Sources */,
 				BFD0ED8B2564F54A00B6EC40 /* JMServer.m in Sources */,
 			);
