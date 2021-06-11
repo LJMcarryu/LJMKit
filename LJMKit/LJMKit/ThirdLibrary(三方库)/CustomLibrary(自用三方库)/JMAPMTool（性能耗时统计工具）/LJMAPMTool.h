@@ -20,14 +20,33 @@ typedef NS_ENUM(NSUInteger, LJMCountStyle) {
     LJMCountStyleInRealTime
 };
 
+/// 统计类型
 typedef NSString *LJMAPMCollectStyleKey NS_STRING_ENUM;
-
+/// Http DNS 耗时
 extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS;
+/// Http 请求响应耗时
 extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest;
+/// 文件类下载耗时
 extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadFile;
-
+/// AES 加密耗时
 extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAES;
+/// RSA 加密耗时
 extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA;
+
+/// 广告请求计数
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdRequestCount;
+/// 广告响应计数
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdResponseCount;
+/// 广告填充计数
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdStuffCount;
+/// 广告曝光计数
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdExposeCount;
+/// 广告点击计数
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdClickCount;
+/// 广告点击后续动作
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdActionStatus;
+/// 错误日志
+extern LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdErrorCode;
 
 @interface LJMAPMTool : NSObject
 

@@ -12,13 +12,22 @@
 
 #import "LJMAPMModel.h"
 #import "JKSqliteKit.h"
+/**
+ Key-Value 跟 APMModel 一一对应
+ */
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS = @"HTTPDNSArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest = @"HTTPRequestArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadFile = @"downloadFileArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAES = @"AESEncryptArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA = @"RSAEncryptArray";
 
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS = @"HTTPDNS";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest = @"LJMAPMCollectStyleKeyHTTPRequest";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadFile = @"LJMAPMCollectStyleKeyDownloadFile";
-
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAES = @"LJMAPMCollectStyleKeyAES";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA = @"LJMAPMCollectStyleKeyRSA";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdRequestCount = @"requestCount";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdResponseCount = @"responseCount";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdStuffCount = @"stuffCount";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdExposeCount = @"exposeCount";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdClickCount = @"clickCount";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdActionStatus = @"actionStatusArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdErrorCode = @"errorCodeArray";
 
 @implementation LJMAPMTool
 
@@ -41,10 +50,12 @@ static LJMAPMTool *instance = nil;
     return instance;
 }
 
+/// 耗时统计开始
 + (uint64_t)apm_foundationStart {
     return mach_absolute_time();
 }
 
+/// 耗时统计结束
 + (uint64_t)apm_foundationStopWithStart:(uint64_t)start {
     uint64_t end = mach_absolute_time();
     uint64_t elapsed = end - start;
@@ -58,11 +69,17 @@ static LJMAPMTool *instance = nil;
     return millisecs;
 }
 
+/// 耗时统计结果保存或更新
 + (void)apm_foundationSaveValue:(id)value key:(LJMAPMCollectStyleKey)collectStyleKey {
     LJMAPMModel *model = [[LJMAPMModel alloc] init];
+    /*
+     NSTimeInterval time=[[NSDate date] timeIntervalSince1970]*1000;
+     NSString *numStr = [NSString stringWithFormat:@"%0.0f",time];
+     long long ts = [numStr longLongValue];
+     */
     model.apmID = 1;
-    [model setValue:value forKey:LJMAPMCollectStyleKeyHTTPDNS];
-    NSLog(@"%@", model.HTTPDNS);
+//    [model setValue:value forKey:collectStyleKey];
+//    NSLog(@"%@", model.HTTPDNS);
 
     BOOL result = [JKSqliteModelTool saveOrUpdateModel:model uid:@"1"];
     if (result) {
