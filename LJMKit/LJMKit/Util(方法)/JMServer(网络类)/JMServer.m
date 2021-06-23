@@ -11,39 +11,40 @@
 @implementation JMServer
 
 - (NSDictionary<NSString *, NSString *> *)requestHeaderFieldValueDictionary {
-    return @{ @"platform": @"iPhone" };
+	return @{ @"platform": @"iPhone" };
 }
 
 @end
 
 @implementation JMNewsApi
 {
-    NSString *_type;
-    NSString *_key;
+	NSString *_type;
+	NSString *_key;
 }
 
 - (id)initWithType:(NSString *)type key:(NSString *)key {
-    self = [super init];
-    if (self) {
-        _type = type;
-        _key = key;
-    }
-    return self;
+	self = [super init];
+	if (self) {
+		_type = type;
+		_key = key;
+	}
+	return self;
 }
 
 - (NSString *)requestUrl {
-    return @"/toutiao/index";
+	return @"/toutiao/index";
 }
 
 - (YTKRequestMethod)requestMethod {
-    return YTKRequestMethodGET;
+	return YTKRequestMethodGET;
 }
 
 - (id)requestArgument {
-    return @{
-        @"type": _type,
-        @"key": _key
-    };
+	return @{
+		@"type": _type,
+		@"key": _key
+	};
+	
 }
 
 @end

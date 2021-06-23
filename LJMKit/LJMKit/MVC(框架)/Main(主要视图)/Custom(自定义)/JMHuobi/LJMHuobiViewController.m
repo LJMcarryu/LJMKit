@@ -1,34 +1,32 @@
 //
-//  LJMCustomViewController.m
+//  LJMHuobiViewController.m
 //  LJMKit
 //
-//  Created by 刘佳明 on 2020/8/29.
-//  Copyright © 2020 jimmy. All rights reserved.
+//  Created by admin on 2021/6/16.
+//  Copyright © 2021 jimmy. All rights reserved.
 //
 
-#import "LJMCustomViewController.h"
-
-#import "LJMNewsViewController.h"
+#import "LJMHuobiViewController.h"
 
 static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
 
-@interface LJMCustomViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LJMHuobiViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 /// tableView
 @property (nonatomic, strong) UITableView *tableView;
 
 /// titleArray
 @property (nonatomic, strong) NSMutableArray *titleArray;
+
 @end
 
-@implementation LJMCustomViewController
+@implementation LJMHuobiViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titleArray = @[@"新闻(骨架图+PPNetworkHelper+YYModel)", @"地图（隐藏：GitHub上传有包的大小控制）"].mutableCopy;
     [self.view addSubview:self.tableView];
 }
-
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,17 +48,6 @@ static NSString *cellReuseIdentifier = @"cellReuseIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
-        case 0:
-            [self.navigationController pushViewController:[[NSClassFromString(@"LJMNewsViewController")alloc]init] animated:YES];
-            break;
-        case 1:
-            [self.navigationController pushViewController:[[NSClassFromString(@"LJMHuobiViewController")alloc]init] animated:YES];
-            break;
-
-        default:
-            break;
-    }
 }
 
 #pragma mark - lazy init
