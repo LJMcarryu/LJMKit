@@ -41,25 +41,21 @@ static NSString *newsCellID = @"newsCellID";
     [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest *_Nonnull request) {
         NSLog(@"httpHeaderField: %@", request.requestHeaderFieldValueDictionary);
         NSLog(@"request : %@", request.responseObject);
-        [LJMAPMTool apm_foundationStopWithStart:apiStart];
+        uint64_t apiStop = [LJMAPMTool apm_foundationStopWithStart:apiStart];
+        [LJMAPMTool apm_foundationUploadValue:[NSString stringWithFormat:@"%lld",apiStop] key:LJMAPMCollectStyleKeyHTTPRequest];
         NSDictionary *dict = request.responseObject;
         NSArray *resultArray = [NSArray arrayWithArray:dict[@"result"][@"data"]];
         for (NSDictionary *dic in resultArray) {
             LJMNewsModel *model = [LJMNewsModel yy_modelWithDictionary:dic];
             [self.dataArray addObject:model];
         }
-        uint64_t dbStart = [LJMAPMTool apm_foundationStart];
         // 批量保存或更新
         [[BGDB shareManager] bg_saveOrUpateArray:self.dataArray ignoredKeys:nil complete:^(BOOL isSuccess) {
             NSLog(@"success");
-//            [LJMAPMTool apm_foundationStopWithStart:dbStart];
-            [LJMAPMTool apm_foundationSaveValue:[NSString stringWithFormat:@"%llu",[LJMAPMTool apm_foundationStopWithStart:dbStart]]
-                                            key:LJMAPMCollectStyleKeyHTTPDNS];
         }];
         [self.tableView tab_endAnimation];
     } failure:^(__kindof YTKBaseRequest *_Nonnull request) {
         JMSLogError(@"%@", request.error.description);
-        [LJMAPMTool apm_foundationStopWithStart:apiStart];
         [self.dataArray removeAllObjects];
         self.dataArray = [NSMutableArray arrayWithArray:[LJMNewsModel bg_findAll:LJMNewsModel.className]];
         [self.tableView tab_endAnimation];

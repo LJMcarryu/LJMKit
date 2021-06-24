@@ -10,24 +10,17 @@
 
 #import <mach/mach_time.h>
 
-#import "LJMAPMModel.h"
-#import "JKSqliteKit.h"
 /**
- Key-Value 跟 APMModel 一一对应
+   Key-Value
  */
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS = @"HTTPDNSArray";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest = @"HTTPRequestArray";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadFile = @"downloadFileArray";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAES = @"AESEncryptArray";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA = @"RSAEncryptArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS = @"HTTPDNS";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest = @"HTTPRequest";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadImage = @"downloadImage";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadVideo = @"downloadVideo";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA = @"RSAEncrypt";
 
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdRequestCount = @"requestCount";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdResponseCount = @"responseCount";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdStuffCount = @"stuffCount";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdExposeCount = @"exposeCount";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdClickCount = @"clickCount";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdActionStatus = @"actionStatusArray";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdErrorCode = @"errorCodeArray";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdActionStatus = @"adActionStatus";
+LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdErrorCode = @"adErrorCode";
 
 @implementation LJMAPMTool
 
@@ -37,7 +30,7 @@ static LJMAPMTool *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
       instance = [[[self class] alloc] init];
-      instance.countStyle = LJMCountStyleAchieveTheGoal;
+      instance.countStyle = LJMCountStyleInRealTime;
     });
     return instance;
 }
@@ -55,7 +48,7 @@ static LJMAPMTool *instance = nil;
     return mach_absolute_time();
 }
 
-/// 耗时统计结束
+/// 耗时统计结束并上传统计数据给服务器
 + (uint64_t)apm_foundationStopWithStart:(uint64_t)start {
     uint64_t end = mach_absolute_time();
     uint64_t elapsed = end - start;
@@ -69,24 +62,9 @@ static LJMAPMTool *instance = nil;
     return millisecs;
 }
 
-/// 耗时统计结果保存或更新
-+ (void)apm_foundationSaveValue:(id)value key:(LJMAPMCollectStyleKey)collectStyleKey {
-    LJMAPMModel *model = [[LJMAPMModel alloc] init];
-    /*
-     NSTimeInterval time=[[NSDate date] timeIntervalSince1970]*1000;
-     NSString *numStr = [NSString stringWithFormat:@"%0.0f",time];
-     long long ts = [numStr longLongValue];
-     */
-    model.apmID = 1;
-//    [model setValue:value forKey:collectStyleKey];
-//    NSLog(@"%@", model.HTTPDNS);
-
-    BOOL result = [JKSqliteModelTool saveOrUpdateModel:model uid:@"1"];
-    if (result) {
-        // 保存成功
-    } else {
-        // 保存失败
-    }
+/// 上传统计数据给服务器
++ (void)apm_foundationUploadValue:(NSString *)value key:(LJMAPMCollectStyleKey)collectStyleKey {
+    NSLog(@"上传数据给服务器 { %@ : %@ }", collectStyleKey, value);
 }
 
 @end
