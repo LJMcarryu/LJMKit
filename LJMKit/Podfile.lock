@@ -28,6 +28,7 @@ PODS:
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
   - Shimmer (1.0.2)
+  - Stinger (0.3.0)
   - SVProgressHUD (2.2.5)
   - TABAnimated (2.4.2)
   - TZImagePickerController (3.5.8)
@@ -61,6 +62,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - Shimmer
+  - Stinger
   - SVProgressHUD
   - TABAnimated
   - TZImagePickerController
@@ -84,6 +86,7 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - Shimmer
+    - Stinger
     - SVProgressHUD
     - TABAnimated
     - TZImagePickerController
@@ -116,6 +119,7 @@ SPEC CHECKSUMS:
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  Stinger: e3cda058ca9034eab26701d494fe24da41fd1d2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TABAnimated: 5135c3a5e4d9bcb2015e379c96f202b55124a0c5
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
@@ -126,6 +130,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 26aa5bb6419b642f7b12e8dc5b69944b3d7084eb
+PODFILE CHECKSUM: 423dd95da57b8942ddac10a521ffb58357a163b6
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

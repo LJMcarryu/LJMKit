@@ -68,6 +68,9 @@ target 'LJMKit' do
   pod 'AAChartKit', :git => 'https://github.com/AAChartModel/AAChartKit.git'
     
   # --------------- 工具类 --------------------
+
+  # AOP
+  pod 'Stinger'
   
   # 自定义 Log
   pod 'CocoaLumberjack'

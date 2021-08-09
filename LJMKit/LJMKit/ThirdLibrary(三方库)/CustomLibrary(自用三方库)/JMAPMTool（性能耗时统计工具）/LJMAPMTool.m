@@ -8,63 +8,69 @@
 
 #import "LJMAPMTool.h"
 
-#import <mach/mach_time.h>
-
-/**
-   Key-Value
- */
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPDNS = @"HTTPDNS";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyHTTPRequest = @"HTTPRequest";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadImage = @"downloadImage";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyDownloadVideo = @"downloadVideo";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyRSA = @"RSAEncrypt";
-
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdActionStatus = @"adActionStatus";
-LJMAPMCollectStyleKey const LJMAPMCollectStyleKeyAdErrorCode = @"adErrorCode";
+#import "LJMSafeDictionary.h"
 
 @implementation LJMAPMTool
 
 static LJMAPMTool *instance = nil;
 
 + (instancetype)sharedInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-      instance = [[[self class] alloc] init];
-      instance.countStyle = LJMCountStyleInRealTime;
-    });
-    return instance;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		instance = [[[self class] alloc] init];
+		instance.isOpenCount = 0;
+		instance.countStyle = LJMCountStyleInRealTime;
+		instance.countValue = 0;
+		instance.safeCountDic = [[LJMSafeDictionary alloc] initWithCapacity:3];
+	});
+	return instance;
 }
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-      instance = [super allocWithZone:zone];
-    });
-    return instance;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		instance = [super allocWithZone:zone];
+	});
+	return instance;
 }
 
-/// 耗时统计开始
-+ (uint64_t)apm_foundationStart {
-    return mach_absolute_time();
-}
-
-/// 耗时统计结束并上传统计数据给服务器
-+ (uint64_t)apm_foundationStopWithStart:(uint64_t)start {
-    uint64_t end = mach_absolute_time();
-    uint64_t elapsed = end - start;
-    mach_timebase_info_data_t info;
-    if (mach_timebase_info(&info) != KERN_SUCCESS) {
-        NSLog(@"mach_timebase_info failed\n");
-    }
-    uint64_t nanosecs = elapsed * info.numer / info.denom;
-    uint64_t millisecs = nanosecs / 1000000;
-    NSLog(@"cost time = %lld ms", millisecs);
-    return millisecs;
+/// 耗时统计记录当前时间 13位时间戳
++ (long long)apm_foundationCurrentTimeStamp {
+	NSString *timeStamp = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970] * 1000];
+	return [timeStamp longLongValue];
 }
 
 /// 上传统计数据给服务器
-+ (void)apm_foundationUploadValue:(NSString *)value key:(LJMAPMCollectStyleKey)collectStyleKey {
-    NSLog(@"上传数据给服务器 { %@ : %@ }", collectStyleKey, value);
++ (void)apm_foundationUploadValuesWithDictionary:(NSDictionary *)dic {
+	NSLog(@"上传数据给服务器 %@", dic);
+	// get
+	{
+		NSURL *url = [NSURL URLWithString:@"http://10.1.112.28:8080/sdk/report"];
+		NSURLRequest *request = [NSURLRequest requestWithURL:url];
+		NSURLSession *session = [NSURLSession sharedSession];
+		NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+		                                  completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
+		                                          // 对从服务器获取到的数据 data 进行相应的处理
+		                                          NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
+		                                          NSLog(@"获取数据 %@", dict);
+						  }];
+		[dataTask resume];
+	}
+	// post
+	{
+		NSURL *url = [NSURL URLWithString:@""];
+		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+		request.HTTPMethod = @"POST";
+		NSURLSession *session = [NSURLSession sharedSession];
+
+		NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+		                                  completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
+		                                          // 对从服务器获取到的数据 data 进行相应的处理
+		                                          NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
+		                                          NSLog(@"获取数据 %@", dict);
+						  }];
+		[dataTask resume];
+	}
 }
 
 @end

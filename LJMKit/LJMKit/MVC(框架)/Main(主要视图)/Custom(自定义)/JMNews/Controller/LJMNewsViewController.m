@@ -12,8 +12,6 @@
 
 #import "LJMWebViewController.h"
 
-#import "LJMAPMTool.h"
-
 static NSString *newsCellID = @"newsCellID";
 
 @interface LJMNewsViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -36,13 +34,10 @@ static NSString *newsCellID = @"newsCellID";
     [self.view addSubview:self.tableView];
     [self.tableView tab_startAnimation];
 
-    uint64_t apiStart = [LJMAPMTool apm_foundationStart];
     JMNewsApi *api = [[JMNewsApi alloc] initWithType:@"top" key:News_Key];
     [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest *_Nonnull request) {
         NSLog(@"httpHeaderField: %@", request.requestHeaderFieldValueDictionary);
         NSLog(@"request : %@", request.responseObject);
-        uint64_t apiStop = [LJMAPMTool apm_foundationStopWithStart:apiStart];
-        [LJMAPMTool apm_foundationUploadValue:[NSString stringWithFormat:@"%lld",apiStop] key:LJMAPMCollectStyleKeyHTTPRequest];
         NSDictionary *dict = request.responseObject;
         NSArray *resultArray = [NSArray arrayWithArray:dict[@"result"][@"data"]];
         for (NSDictionary *dic in resultArray) {

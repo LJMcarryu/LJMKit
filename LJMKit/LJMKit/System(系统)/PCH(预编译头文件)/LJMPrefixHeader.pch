@@ -38,6 +38,9 @@
 //
 #import "JMServer.h"
 
+//
+#import <Stinger/Stinger.h>
+
 // 其他 PCH
 #import "LJMCustomHeader.pch"
 #import "LJMServiceHeader.pch"
