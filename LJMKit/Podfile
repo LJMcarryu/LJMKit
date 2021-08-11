@@ -71,6 +71,7 @@ target 'LJMKit' do
 
   # AOP
   pod 'Stinger'
+  pod "Aspects"
   
   # 自定义 Log
   pod 'CocoaLumberjack'

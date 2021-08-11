@@ -38,8 +38,9 @@
 //
 #import "JMServer.h"
 
-//
+// AOP
 #import <Stinger/Stinger.h>
+#import <Aspects/Aspects.h>
 
 // 其他 PCH
 #import "LJMCustomHeader.pch"
