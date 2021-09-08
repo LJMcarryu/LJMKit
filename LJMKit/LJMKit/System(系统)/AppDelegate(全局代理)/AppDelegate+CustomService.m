@@ -57,7 +57,7 @@
 - (void)setFMDB {
     bg_setSqliteName(@"10001");
     NSString *dbPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    JMSLogDebug(@"数据库路径: %@/", dbPath);
+    JMSLogInfo(@"数据库路径: %@/", dbPath);
 }
 
 #pragma mark - 网络设置
